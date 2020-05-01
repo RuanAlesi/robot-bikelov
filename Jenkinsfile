@@ -9,7 +9,7 @@ pipeline {
       stage('Build') {
          steps {
             echo 'Compilando/baiando as dependências do projeto'
-            sh 'pip install robotframework'
+            sh 'pip install -r requirements.txt'
          }
       }
       stage('Tests') {
