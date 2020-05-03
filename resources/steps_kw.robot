@@ -31,7 +31,9 @@ And I am at the register page
     Click Link          /new
 
 When I ad this bike
-    BuiltIn.Run keyword if           "${bike_json['thumb']}" != "${Empty}"      Choose File         css:#thumbnail input                ${CURDIR}\\images\\${bike_json['thumb']}
+    BuiltIn.Run keyword if              "${bike_json['thumb']}" != "${Empty}"      
+    ..                                  Choose File         css:#thumbnail input
+    ..                                  ${CURDIR}//images//${bike_json['thumb']}
     Clear Element text      id:name
     Input Text              id:name                             ${bike_json['name']}
     Clear Element text      id:brand
