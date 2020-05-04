@@ -8,7 +8,7 @@ pipeline {
    stages {
       stage('Build') {
          steps {
-            echo 'Compilando/baiando as dependências do projeto'
+            echo 'Compilando/baixando as dependências do projeto'
             sh 'pip install -r requirements.txt'
          }
       }
@@ -16,6 +16,7 @@ pipeline {
          steps {
             echo 'Executando testes de regressão'
             sh 'robot -d ./log tests/'
+            robot 'log'
          }
       }
       stage('UAT') {
